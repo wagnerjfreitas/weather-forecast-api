@@ -1,0 +1,12 @@
+para debugar o projeto
+----------------------------------------------------------------
+- user o debug do VSCode
+- clicar na setinha no menu vertical do VSCode, opção ctrl + chift + D
+- seleciona a opção Node.js
+- vai abrir um arquivo launch.json
+- muda pwa-node para node
+- mudar request = "attach"
+- remover propriedade "program"
+
+
+
