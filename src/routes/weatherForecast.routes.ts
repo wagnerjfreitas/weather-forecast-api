@@ -9,7 +9,7 @@ dotenv.config();
 const weatherForecastRoutes = Router();
 
 weatherForecastRoutes.get(
-  "/weather-forecast/5-days/:city",
+  "/api/weather-forecast/5-days/:city",
   async (request, response) => {
     try {
       const { city } = request.params;
