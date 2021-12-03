@@ -8,7 +8,7 @@
 - express
 
 ## Dependências de desenvolvimento do projeto
-- eslint e prettier: responsável pela padronização do código fonte
+- eslint e prettier
 - ts-node-dev: 
 - typescript
 
@@ -29,5 +29,11 @@ root
 ##### Rotas disponíveis
 - previsão do tempo dos ultimos 5 dias: http://localhost:3333/api/weather-forecast/5-days/:city
 - API de terceiros: https://api.openweathermap.org/data/2.5/forecast?q={cityname}&appid={APIkey}
+
+#### Execute o seguinte comando para executar o servidor:
+```bash
+yarn ts-node-dev --inspect --transpile-only --ignore-watch node_modules --respawn src/server.ts
+```
+
 
 ## Bom trabalho!!! :rocket:
