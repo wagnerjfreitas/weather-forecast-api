@@ -12,6 +12,16 @@
 - ts-node-dev: 
 - typescript
 
+### Configurações do ambiente de desenvolvimento
+- Adicionar no VSCode a configuração para que o codigo seja formatado (eslint e prettier) ao salvar o arquivo.
+- Para isso adicionar o seguinte propriedades no arquivo settings.json do VSCode:
+
+```json 
+"editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true
+      }
+```
+
 ## Estrutura do projeto
 ```bash
 root
