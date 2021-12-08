@@ -11,7 +11,7 @@ const api = {
   get5Days: async (cityName: string) => {
     try {
       const { data } = await apiAxios.get(
-        `/?q=${cityName}&appid=${process.env.KEY_API_OPENWEATHERMAP}&lang=pt_br`
+        `/?q=${cityName}&appid=${process.env.KEY_API_OPENWEATHERMAP}&lang=pt_br&units=metric`
       );
       return data;
     } catch (error) {

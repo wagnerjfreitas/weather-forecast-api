@@ -2,7 +2,8 @@
 import * as dotenv from "dotenv";
 import { Router } from "express";
 
-import { resource } from "../resources/WeaterForecastResource";
+import { WeatherForecastRepository } from "../repositories/ForecastRepository";
+import { repository } from "../repositories/WeaterForecastRepository";
 import { api } from "../services/api";
 import { WeatherForecast } from "../types/WeatherForecast";
 
@@ -17,10 +18,12 @@ weatherForecastRoutes.get(
       const { city } = request.params;
       const result = await api.get5Days(encodeURI(city));
 
-      // salvar no banco de dados o retorno da api
-      // history: { city: string, json_data: json }
+      const weeatherForecast = new WeatherForecastRepository();
+      weeatherForecast.create(result);
 
-      return response.json(resource.forecast5DaysResource(result));
+      const res = weeatherForecast.show(result); // repository.forecast5DaysRepository(result);
+
+      return response.json(res);
     } catch (error) {
       return response.json(error);
     }
@@ -37,7 +40,7 @@ weatherForecastRoutes.get(
       // e converter para o formato correto de retorno
 
       const historyResult = history.map((item) => {
-        return resource.forecast5DaysResource(item);
+        return repository.forecast5DaysRepository(item);
       });
 
       return response.json(historyResult);
