@@ -1,5 +1,5 @@
 # weather-forecast
- Este projeto é uma API responsável pelo consumo de outra API de previsão do tempo (https://openweathermap.org/forecast5)
+ Este projeto é uma API responsável pelo consumo de outra API de previsão do tempo (https://openweathermap.org/forecast5). Nela ocorre a transformação dos dados de forma a obter as informações necessárias e formatar esses dados para serem consumidos pelo aplicativo movel.
 
 ## Dependências do projeto
 - axios
@@ -13,8 +13,8 @@
 - typescript
 
 ### Configurações do ambiente de desenvolvimento
-- Adicionar no VSCode a configuração para que o codigo seja formatado (eslint e prettier) ao salvar o arquivo.
-- Para isso adicionar o seguinte propriedades no arquivo settings.json do VSCode:
+- Gerenciador de pacotes Yarn 
+- Adicionar no VSCode (settings.json) a configuração para que o codigo seja formatado (eslint e prettier) ao salvar o arquivo. Segue abaixo a configuração:
 
 ```json 
 "editor.codeActionsOnSave": {
@@ -26,6 +26,8 @@
 ```bash
 root
 |--src
+|  |--model
+|  |--repositories
 |  |--routes
 |  |--services
 |--server.ts
@@ -40,10 +42,22 @@ root
 - previsão do tempo dos ultimos 5 dias: http://localhost:3333/api/weather-forecast/5-days/:city
 - API de terceiros: https://api.openweathermap.org/data/2.5/forecast?q={cityname}&appid={APIkey}
 
-#### Execute o seguinte comando para executar o servidor:
+#### Iniciar o servidor:
 ```bash
-yarn ts-node-dev --inspect --transpile-only --ignore-watch node_modules --respawn src/server.ts
+yarn start
 ```
 
+## Arquivo de configurações de variáveis de ambiente
+- Acidionar um arquivo .env na raiz do projeto com as seguintes variáveis
+
+```env
+KEY_API_OPENWEATHERMAP=
+BASE_URL='https://api.openweathermap.org/data/2.5/forecast'
+```
+
+- Para criar sua KEY_API_OPENWEATHERMAP acesse o site [https://openweathermap.org/api]
+e crie uma conta. Depois será possível criar sua propria chave.
+
+- A variável BASE_URL, contém a rota principal usada para as requisições da nossa api.
 
 ## Bom trabalho!!! :rocket:

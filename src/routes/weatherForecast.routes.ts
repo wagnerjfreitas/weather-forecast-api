@@ -2,10 +2,10 @@
 import * as dotenv from "dotenv";
 import { Router } from "express";
 
+import { WeatherForecast } from "../model/WeatherForecast";
 import { WeatherForecastRepository } from "../repositories/ForecastRepository";
 import { repository } from "../repositories/WeaterForecastRepository";
 import { api } from "../services/api";
-import { WeatherForecast } from "../types/WeatherForecast";
 
 dotenv.config();
 
@@ -21,7 +21,7 @@ weatherForecastRoutes.get(
       const weeatherForecast = new WeatherForecastRepository();
       weeatherForecast.create(result);
 
-      const res = weeatherForecast.show(result); // repository.forecast5DaysRepository(result);
+      const res = weeatherForecast.show(result);
 
       return response.json(res);
     } catch (error) {
@@ -35,7 +35,7 @@ weatherForecastRoutes.get(
   async (request, response) => {
     try {
       const history = [] as WeatherForecast[];
-
+      // Caso o banco de dados tivesse construido no servidor:
       // obter do banco de dados o historico de pesquisa
       // e converter para o formato correto de retorno
 
