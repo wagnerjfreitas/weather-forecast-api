@@ -1,5 +1,7 @@
 # weather-forecast
  Este projeto é uma API responsável pelo consumo de outra API de previsão do tempo (https://openweathermap.org/forecast5). Nela ocorre a transformação dos dados de forma a obter as informações necessárias e formatar esses dados para serem consumidos pelo aplicativo movel.
+ - Neste projeto é possível obter a previsão do tempo dos ultimos 5 dias passando como parâmetro o nome da cidade.
+ - Optei por guardar o histórico das previsões das cidades pesquisadas no aplicativo móvel que vai consumir a api. Como não é uma página web a melhor opção é persistir o histórioco localmente no próprio dispositivo móvel.
 
 ## Dependências do projeto
 - axios
@@ -7,7 +9,7 @@
 - dotenv
 - express
 
-## Dependências de desenvolvimento do projeto
+### Dependências de desenvolvimento do projeto
 - eslint e prettier
 - ts-node-dev: 
 - typescript
@@ -22,7 +24,7 @@
       }
 ```
 
-## Estrutura do projeto
+### Estrutura do projeto
 ```bash
 root
 |--src
@@ -34,15 +36,15 @@ root
 |--.env
 ```
 
-##### Linguagens e frameworks:
+### Linguagens e frameworks:
 - NodeJS;
 - TypeScript;
 
-##### Rotas disponíveis
+### Rotas disponíveis
 - previsão do tempo dos ultimos 5 dias: http://localhost:3333/api/weather-forecast/5-days/:city
 - API de terceiros: https://api.openweathermap.org/data/2.5/forecast?q={cityname}&appid={APIkey}
 
-#### Iniciar o servidor:
+### Iniciar o servidor:
 ```bash
 yarn start
 ```
