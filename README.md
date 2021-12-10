@@ -1,7 +1,9 @@
 # weather-forecast
- Este projeto é uma API responsável pelo consumo de outra API de previsão do tempo (https://openweathermap.org/forecast5). Nela ocorre a transformação dos dados de forma a obter as informações necessárias e formatar esses dados para serem consumidos pelo aplicativo movel.
+ Este projeto é uma API responsável pelo consumo de outra API de previsão do tempo (https://openweathermap.org/forecast5). Nela ocorre a transformação dos dados de forma a obter as informações necessárias e formatar esses dados para serem consumidos por um aplicativo movel.
  - Neste projeto é possível obter a previsão do tempo dos ultimos 5 dias passando como parâmetro o nome da cidade.
  - Optei por guardar o histórico das previsões das cidades pesquisadas no aplicativo móvel que vai consumir a api. Como não é uma página web a melhor opção é persistir o histórioco localmente no próprio dispositivo móvel.
+- Esta API é consumida pelo seguinte App mobile: https://github.com/wagnerjfreitas/weather-forecast-app
+
 
 ## Dependências do projeto
 - axios
